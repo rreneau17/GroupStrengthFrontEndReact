@@ -16,7 +16,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="container-fluid sticky-top">
+            {/* <div className="container-fluid sticky-top">
                 <div className = "row">
                     <div className="col-xl-2 bg-dark"></div>
                     <div className="col-xl-8 px-0">
@@ -43,7 +43,7 @@ class Header extends Component {
                     </div>
                     <div class="col-xl-2 bg-dark"></div>
                 </div>
-            </div>
+            </div> */}
         );
     }
 }
