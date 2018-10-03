@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route} from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
-
-import Header from './Header';
-const Landing = () => <h2>Landing</h2>;
-const dbView = () => <h2>Dashboard</h2>;
+// import * as actions from '../actions';
+import { bindActionCreators } from 'redux';
+import { fetchUser } from '../actions';
+import Header from './header';
+import Landing from './landing';
+// const Landing = () => <h2>Landing</h2>;
+const dashView = () => <h2>Dashboard</h2>;
 const routinesView = () => <h2>Routines</h2>;
 
 class App extends Component {
@@ -22,7 +24,7 @@ class App extends Component {
                     <div>
                         <Header />
                         <Route exact path="/" component={Landing} />
-                        <Route exact path="/dbView" component={dbView} />
+                        <Route exact path="/dbView" component={dashView} />
                         <Route exact path="/routinesView" component={routinesView} />
                     </div>
                 </BrowserRouter>
@@ -31,4 +33,10 @@ class App extends Component {
     }
 };
 
-export default connect(null, actions)(App);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ fetchUser }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(App);
+
+// export default connect(null, actions)(App);
