@@ -1,3 +1,5 @@
+// header with navigation bar
+
 import React, { Component } from 'react';
 import logo from '../images/group_strength_logo.png';
 import { connect } from 'react-redux';
@@ -5,6 +7,7 @@ import { Navbar, Nav, NavItem, Grid, Row, Col, Glyphicon } from 'react-bootstrap
 
 class Header extends Component {
     
+    // renders link item depending on user log in status
     renderContent() {
         switch (this.props.auth) {
             case null:
@@ -33,8 +36,14 @@ class Header extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
-                    <NavItem eventKey={1} href="#">
-                        Link Right
+                    <NavItem eventKey={1} href="#device-app-info">
+                        Watch App
+                    </NavItem>
+                    <NavItem eventKey={2} href="#featured-workouts">
+                        Featured Workouts
+                    </NavItem>
+                    <NavItem eventKey={3} href="#coming-soon">
+                        Coming Soon
                     </NavItem>
                     {this.renderContent()}
                     </Nav>

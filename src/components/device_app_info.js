@@ -1,3 +1,5 @@
+// section on fitbit watch app 
+
 import React from 'react';
 import versa_gs from '../images/versa_gs.jpg';
 

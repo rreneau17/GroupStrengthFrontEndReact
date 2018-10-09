@@ -1,3 +1,5 @@
+// contains thumbnails of 3 featured workouts that link to the corresponding workout info
+
 import React from 'react';
 import deadlift from '../images/deadlift.jpg';
 import runner from '../images/runner.jpg';

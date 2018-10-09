@@ -3,11 +3,14 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import slide1 from '../images/strength_training_pic.jpg';
+import slide2 from '../images/handshake.jpg';
+import slide3 from '../images/fitness_smiling_group.jpg';
+
 
 function CarouselGS() {
     return (
         <Carousel
-            interval={100000}
+            interval={5000}
             controls={false}>
             <Carousel.Item>
                 <img src={slide1} />
@@ -21,17 +24,17 @@ function CarouselGS() {
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img src={slide1} />
+                <img src={slide2} />
                 <Carousel.Caption>
                 <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>...</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img src={slide1} />
+                <img src={slide3} />
                 <Carousel.Caption>
                 <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <p>...</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

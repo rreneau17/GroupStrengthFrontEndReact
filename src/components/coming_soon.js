@@ -1,3 +1,5 @@
+// Coming soon section
+
 import React from 'react';
 
 function ComingSoon() {

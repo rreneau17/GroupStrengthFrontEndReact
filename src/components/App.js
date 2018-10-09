@@ -13,6 +13,7 @@ const routinesView = () => <h2>Routines</h2>;
 
 class App extends Component {
 
+    // gets the user authentication status
     componentDidMount() {
         this.props.fetchUser();
     }
