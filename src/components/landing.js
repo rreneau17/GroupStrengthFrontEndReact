@@ -2,6 +2,7 @@ import React from 'react';
 import CarouselGS from './carousel';
 import DeviceAppInfo from './device_app_info';
 import FeaturedWorkouts from './featured_workouts';
+import ComingSoon from './coming_soon';
 
 function Landing() {
     return (
@@ -9,6 +10,7 @@ function Landing() {
             <CarouselGS />
             <DeviceAppInfo />
             <FeaturedWorkouts />
+            <ComingSoon />
 
         </div>
     )

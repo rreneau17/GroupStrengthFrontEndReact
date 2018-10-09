@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { fetchUser } from '../actions';
 import Header from './header';
 import Landing from './landing';
+import Footer from './footer';
 // const Landing = () => <h2>Landing</h2>;
 const dashView = () => <h2>Dashboard</h2>;
 const routinesView = () => <h2>Routines</h2>;
@@ -26,6 +27,7 @@ class App extends Component {
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/dbView" component={dashView} />
                         <Route exact path="/routinesView" component={routinesView} />
+                        <Footer />
                     </div>
                 </BrowserRouter>
             </div>

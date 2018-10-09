@@ -1,3 +1,5 @@
+// implements a carousel from react-bootstrap
+
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import slide1 from '../images/strength_training_pic.jpg';
