@@ -21,13 +21,13 @@ class Header extends Component {
 
     render() {
         return (
+
             <Navbar 
-                inverse 
-                collapseOnSelect 
-                fluid 
-                fixedTop >
-                <Col md={2}></Col>
-                <Col md={8}>
+                collapseOnSelect
+                fixedTop
+                fluid>
+                
+                <div className="container">
                 <Navbar.Header>
                     <Navbar.Brand>
                         <img src={logo} />
@@ -48,9 +48,9 @@ class Header extends Component {
                     {this.renderContent()}
                     </Nav>
                 </Navbar.Collapse>
-                </Col>
-                <Col md={2}></Col>
-            </Navbar>       
+                </div>
+            </Navbar> 
+
         )
     }
 }
