@@ -2,9 +2,12 @@ body {
     margin: 0;
 }
 
+/**************************************************************** 
+    Navbar styles
+*****************************************************************/
+
 .navbar {
     border-radius: 0%;
-    /* font-size: 1em; */
     background-color: #343a40;
     margin-bottom: 0px;
     border: none;
@@ -170,10 +173,6 @@ body {
     /* font-family: 'Oswald', sans-serif; */
 }
 
-.card a {
-    text-decoration: none;
-    color: lightgray;
-}
 
 .thumbnail {
     border: 1px solid rgba(0,0,0,.125) !important;
@@ -191,13 +190,6 @@ body {
     height: 230px;
     width: 100%;
     object-fit: cover;
-}
-
-.row .equal {
-    display: flex;
-    display: -webkit-flex;
-    flex-wrap: wrap;
-    height: 100%;
 }
 
 /*****************************************************************
@@ -240,18 +232,4 @@ body {
     margin: 0 5em;
 }
 
-/*****************************************************************
-    Login / SignIn Styles
-******************************************************************/
-
-/* hides form for auto guest login */
-#demoForm {
-    display: none;
-}
-
-.signin-center {
-    width: 100%; 
-    text-align: center; 
-    margin: 20px 0
-}
 
