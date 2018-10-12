@@ -5,7 +5,7 @@ import deadlift from '../images/deadlift.jpg';
 import runner from '../images/runner.jpg';
 import pushUp from '../images/woman_pushup.jpg';
 
-function featuredWorkouts() {
+function FeaturedWorkouts() {
 
     return (
         <section id="featured-workouts">
@@ -17,7 +17,7 @@ function featuredWorkouts() {
                     <div className="col-lg-2"></div>
                     <div className="col-lg-8">
                         
-                        <div class="col-sm-4">
+                        <div className="col-sm-4">
                             <div className="thumbnail ">
                                 <img src={deadlift} alt="..." />
                                 <div className="caption">
@@ -55,4 +55,4 @@ function featuredWorkouts() {
     );
 }
 
-export default featuredWorkouts;
+export default FeaturedWorkouts;
