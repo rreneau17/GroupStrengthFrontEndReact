@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    border-radius: 0%;
+    /* font-size: 1em; */
+    background-color: #343a40;
+    margin-bottom: 0px;
+    border: none;
+    color: #f8f9fa;
+}
+
+.navbar-toggle {
+    margin-top: 15px;
+} 
+
+.navbar li {
+    margin: 10px 5px;
+}
+
+.navbar-brand {
+    height: auto;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #f8f9fa;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+  color: lightgray;
+}
+
+
+/*****************************************************************
+    Carousel and Device Info Styles
+******************************************************************/
+
+/* padding needed to clear navbar */
+.carousel {
+    padding-top: 70px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    max-height: 600px;
+    min-height: 600px;
+    object-fit: cover;
+}
+
+.carousel-indicators li {
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    background-color: rgba(255,255,255,.5);
+    border: none;
+}
+
+.carousel img {
+    width: 100%;
+    max-height: 600px;
+    min-height: 600px;
+    object-fit: cover;
+}
+
+#learn-more {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    padding: 7px 0 0 0;
+    margin: 50px 0 0 0;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    font-size: 10px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
+#device-app-info {
+    background: white;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+#device-app-info img {
+    max-height: 395px;
+}
+
+/*****************************************************************
+    Media Query Styles
+******************************************************************/
+
+@media (min-width:1200px) {
+    .carousel-caption h1 {
+        font-size: 4em;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: .05em;
+        font-weight: 700;
+        text-shadow:  0 1px 7px rgba(0,0,0,0.5); 
+    }
+
+    .carousel-caption p {
+        font-size: 1.5em;
+        letter-spacing: .05em;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .carousel-caption h1 {
+        font-size: 3em;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: .05em;
+        font-weight: 700;
+        text-shadow:  0 1px 7px rgba(0,0,0,0.5); 
+    }
+    
+    .carousel-caption p {
+        font-size: 1.2em;
+        letter-spacing: .05em;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .carousel-caption h1 {
+        font-size: 2.5em; 
+    } 
+
+    .carousel-caption p {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 2.5em;
+        /* padding-bottom: 225px;  */
+    }
+    
+    #device-app-info h2 {
+        font-size: 1.7em;
+    }
+
+    .device-anchor {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+}
+
+/*****************************************************************
+    Featured Workout Styles
+******************************************************************/
+
+#featured-workouts {
+    background: #f8f8f8;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+#featured-workouts h2 {
+    padding-bottom: 1.5em;
+    text-align: center;
+}
+
+.focal-item {
+    color: #6bc6b5;
+    /* font-family: 'Oswald', sans-serif; */
+}
+
+.card a {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.thumbnail {
+    border: 1px solid rgba(0,0,0,.125) !important;
+    background-color: #343a40;
+    padding: 0px;
+    text-align: center;
+    height: 100%;
+}
+
+.thumbnail .caption {
+    color: lightgray;
+}
+
+.thumbnail img {
+    height: 230px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.row .equal {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+/*****************************************************************
+    Bottom Section
+******************************************************************/
+
+#coming-soon {
+    padding-top: 5em;
+    padding-bottom: 5em;
+    text-align: center;
+}
+
+#coming-soon h4 {
+    text-align: left;
+    /* margin: 0 5em; */
+}
+
+.filler-bottom {
+    background: #f8f8f8;
+    height: 2em;
+}
+
+.footer a {
+    color: #f8f8f8;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color:   lightgray;
+}
+
+.footer {
+    color: #f8f8f8;
+    background-color: #343a40;
+    padding: 5em 0; 
+}
+
+.footer li {
+    display: inline-block;
+    margin: 0 5em;
+}
+
+/*****************************************************************
+    Login / SignIn Styles
+******************************************************************/
+
+/* hides form for auto guest login */
+#demoForm {
+    display: none;
+}
+
+.signin-center {
+    width: 100%; 
+    text-align: center; 
+    margin: 20px 0
+}
+
