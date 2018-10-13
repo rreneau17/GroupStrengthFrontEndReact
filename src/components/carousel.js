@@ -6,10 +6,10 @@ import { Carousel } from 'react-bootstrap';
 
 class CarouselGS extends Component {
 
-    renderSlide(picPath) {
+    renderSlide(pic) {
         return (
-            <Carousel.Item>
-                <img src={require(`../images/${picPath}`)} />
+            <Carousel.Item key={pic}>
+                <img src={require(`../images/${pic}`)} />
                 <Carousel.Caption>
                     <h1>EASY TRACKING FOR STRENGTH<br />TRAINING, HIIT, AND POST REHAB</h1>
                     <p>Use the power of a custom app developed on the Fitbit <br />platform to track and analyze your training sessions.</p>
@@ -23,13 +23,16 @@ class CarouselGS extends Component {
     }
     
     render() {
-        
         if (this.props.landing) {
             return (
                 <Carousel
                     interval={6000}
                     controls={false}>
-                    {this.props.landing.map(this.renderSlide)}
+                    {this.props.landing.map(item => {
+                        if(item.slides) {
+                            return item.slides.map(this.renderSlide);
+                        }
+                    })} 
                 </Carousel>
             )
         } else {

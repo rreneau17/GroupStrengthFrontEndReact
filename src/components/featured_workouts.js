@@ -1,46 +1,58 @@
 // contains thumbnails of 3 featured workouts that link to the corresponding workout info
 
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import FeaturedThumbnails from './featured_thumbnails';
 import deadlift from '../images/deadlift.jpg';
 import runner from '../images/runner.jpg';
 import pushUp from '../images/woman_pushup.jpg';
 
-function FeaturedWorkouts() {
+class FeaturedWorkouts extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedWorkout: ''
+        }
+        
+    }
 
-    return (
-        <section id="featured-workouts">
-            <div className="container">
-                <h2>Check out these featured workouts on <span className="focal-item">Group Strength</span></h2>  
-                <div className="col-sm-4">
-                    <div className="thumbnail ">
-                        <img src={deadlift} alt="..." />
-                        <div className="caption">
-                            <h3>Basic Strength Circuit</h3>
-                            <p>Type: Strength</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-sm-4">
-                    <div className="thumbnail">
-                        <img src={runner} alt="..." />
-                        <div className="caption">
-                            <h3>Strength Training for Runners</h3>
-                            <p>Type: Strength</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-sm-4">
-                    <div className="thumbnail">
-                        <img src={pushUp} alt="..." />
-                        <div className="caption">
-                            <h3>Body Weight HITT Workout</h3>
-                            <p>Type: HITT</p>
-                        </div>
-                    </div>
-                </div>  
-            </div>     
-        </section>
-    );
+
+    renderThumbnails(workout) {
+        return (
+            <div key={workout.routineName} className="col-sm-4">
+                <FeaturedThumbnails 
+                    routine={workout.routineName} 
+                    pic={workout.picName} 
+                    type={workout.routineType}
+                    />
+            </div>
+        )
+    }
+
+    render() {
+        if(this.props.landing) {
+            return (
+                <section id="featured-workouts">
+                    <div className="container">
+                        <h2>Check out these featured workouts on <span className="focal-item">Group Strength</span></h2>  
+                        {this.props.landing.map(item => {
+                            if(item.featured) {
+                                return item.featured.map(this.renderThumbnails);
+                            }
+                        })}
+                    </div>     
+                </section>
+            );
+        } else {
+            return (
+                <p>Loading workouts...</p>
+            )
+        }
+    }
 }
 
-export default FeaturedWorkouts;
+function mapStateToProps(state) {
+    return { landing: state.landing.data }
+}
+
+export default connect(mapStateToProps)(FeaturedWorkouts);
