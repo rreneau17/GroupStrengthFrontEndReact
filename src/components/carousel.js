@@ -28,11 +28,7 @@ class CarouselGS extends Component {
                 <Carousel
                     interval={6000}
                     controls={false}>
-                    {this.props.landing.map(item => {
-                        if(item.slides) {
-                            return item.slides.map(this.renderSlide);
-                        }
-                    })} 
+                    {this.props.landing.slides.map(this.renderSlide)}
                 </Carousel>
             )
         } else {
@@ -42,7 +38,7 @@ class CarouselGS extends Component {
 }
 
 function mapStateToProps(state) {
-    return { landing: state.landing.data }
+    return (state.landing.data) ? { landing: state.landing.data } : { landing: ''};
 }
 
 export default connect(mapStateToProps)(CarouselGS);

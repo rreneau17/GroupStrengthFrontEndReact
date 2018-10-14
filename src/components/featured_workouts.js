@@ -3,30 +3,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FeaturedThumbnails from './featured_thumbnails';
-import deadlift from '../images/deadlift.jpg';
-import runner from '../images/runner.jpg';
-import pushUp from '../images/woman_pushup.jpg';
 
 class FeaturedWorkouts extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedWorkout: ''
+            selectedRoutine: ''
         }
-        
+        this.chooseRoutine = this.chooseRoutine.bind(this);
     }
 
-
-    renderThumbnails(workout) {
-        return (
-            <div key={workout.routineName} className="col-sm-4">
-                <FeaturedThumbnails 
-                    routine={workout.routineName} 
-                    pic={workout.picName} 
-                    type={workout.routineType}
-                    />
-            </div>
-        )
+    // for practice.  this function will not exist in production
+    chooseRoutine(selectedRtn) {
+        this.setState({ selectedRoutine: selectedRtn });
     }
 
     render() {
@@ -35,11 +24,19 @@ class FeaturedWorkouts extends Component {
                 <section id="featured-workouts">
                     <div className="container">
                         <h2>Check out these featured workouts on <span className="focal-item">Group Strength</span></h2>  
-                        {this.props.landing.map(item => {
-                            if(item.featured) {
-                                return item.featured.map(this.renderThumbnails);
-                            }
+                        {this.props.landing.featured.map(workout => {
+                            return (
+                                <div key={workout.routineName} className="col-sm-4">
+                                    <FeaturedThumbnails 
+                                        routine={workout.routineName} 
+                                        pic={workout.picName} 
+                                        type={workout.routineType}
+                                        onRtnSelect={this.chooseRoutine}
+                                        />
+                                </div>
+                            )
                         })}
+                        <p>Routine Selected:  "{this.state.selectedRoutine}"  For practice only.  Will remove this line.</p>
                     </div>     
                 </section>
             );
@@ -52,7 +49,7 @@ class FeaturedWorkouts extends Component {
 }
 
 function mapStateToProps(state) {
-    return { landing: state.landing.data }
+    return (state.landing.data) ? { landing: state.landing.data } : { landing: ''};
 }
 
 export default connect(mapStateToProps)(FeaturedWorkouts);
