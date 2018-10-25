@@ -232,4 +232,21 @@ body {
     margin: 0 5em;
 }
 
+/*****************************************************************
+    Dashboard 
+******************************************************************/
+
+#dashboard-table {
+    padding-top: 70px;
+    /* background-color: #f8f8f8;
+    color: #343a40; */
+}
+
+.exercise-list {
+    display: none;
+}
+
+.exercise-list-show {
+    display: table-row
+}
 

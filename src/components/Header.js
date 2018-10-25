@@ -3,7 +3,10 @@
 import React, { Component } from 'react';
 import logo from '../images/group_strength_logo.png';
 import { connect } from 'react-redux';
-import { Navbar, Nav, NavItem, Grid, Row, Col, Glyphicon } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
+// import { HashLink as Link } from 'react-router-hash-link';
 
 class Header extends Component {
     
@@ -13,9 +16,17 @@ class Header extends Component {
             case null:
                 return 'checking for authentication...';
             case false:
-                return <NavItem eventKey={2} href="/api/test">Log In</NavItem>
+                return (
+                    <LinkContainer to="/dashView" activeClassName="">
+                        <NavItem eventKey={4}>Log In</NavItem>
+                    </LinkContainer>
+                )
             default: 
-                return <NavItem eventKey={2} href="/api/test">Log Out</NavItem>
+                return (
+                    <LinkContainer to="/dashView" activeClassName="">
+                        <NavItem eventKey={4} href="/api/test">Log Out</NavItem>
+                    </LinkContainer>
+                )
         }
     }
 
@@ -30,21 +41,27 @@ class Header extends Component {
                 <div className="container">
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <img src={logo} />
+                        <Link to="/"><img src={logo} /></Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
-                    <NavItem eventKey={1} href="#device-app-info">
-                        Watch App
-                    </NavItem>
-                    <NavItem eventKey={2} href="#featured-workouts">
-                        Featured Workouts
-                    </NavItem>
-                    <NavItem eventKey={3} href="#coming-soon">
-                        Coming Soon
-                    </NavItem>
+                    <LinkContainer to="/" activeClassName="">
+                        <NavItem eventKey={1} href="#device-app-info">
+                            Watch App
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to="/" activeClassName="">
+                        <NavItem eventKey={2} href="#featured-workouts">
+                            Featured Workouts
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to="/dashView" activeClassName="">
+                        <NavItem eventKey={3}>
+                            Dashboard
+                        </NavItem>
+                    </LinkContainer>
                     {this.renderContent()}
                     </Nav>
                 </Navbar.Collapse>

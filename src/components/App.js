@@ -7,8 +7,9 @@ import { fetchUser } from '../actions';
 import Header from './header';
 import Landing from './landing';
 import Footer from './footer';
+import DashView from './dashView'; 
 // const Landing = () => <h2>Landing</h2>;
-const dashView = () => <h2>Dashboard</h2>;
+// const dashView = () => <h2>Dashboard</h2>;
 const routinesView = () => <h2>Routines</h2>;
 
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
                     <div>
                         <Header />
                         <Route exact path="/" component={Landing} />
-                        <Route exact path="/dbView" component={dashView} />
+                        <Route exact path="/dashView" component={DashView} />
                         <Route exact path="/routinesView" component={routinesView} />
                         <Footer />
                     </div>
